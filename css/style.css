@@ -1,0 +1,58 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+body{background: #f7efe8; font-family: 'LeagueGothicRegular', arial, sans-serif; color: #444;}
+h1,h2,h3 {font-weight: normal;}
+ul {float: left; margin: 0; padding: 0;}
+ul li {float: left; list-style: none;}
+header {text-align: center;font-size: 3em; line-height: 4em}
+section {padding: 30px;}
+section h2 {font-family: Helvetica; font-size: 2em; background: url('../gui/label.png') right 0 no-repeat;line-height: 1.3em;padding-left: 5px;color: #bbb;}
+section h2:hover {color: #d9d9d9}
+.animate-me {cursor:pointer; background: url('../gui/html5.png') 0 0 no-repeat; line-height: 128px; width: 128px; height: 128px; position: relative; left: 0;}
+
+
+/* ANIMATIONS */
+
+/* 
+============ 
+SPIN on X 
+============
+*/
+@-webkit-keyframes xspin {
+	  0% { -webkit-transform: rotateX(0); }
+	100% { -webkit-transform: rotateX(360deg); }
+}
+.csstransforms3d.cssanimations header {-webkit-perspective: 1000;}
+.csstransforms3d.cssanimations header h1 {
+	overflow: hidden;
+	-webkit-animation: xspin 2s linear 1; /*1 is the number of iterations*/
+}
+
+
+/* 
+============ 
+CSS3 BOUNCE
+============
+*/
+
+@-webkit-keyframes bounce {
+  0% {-webkit-transform: translate(10,0);}
+  25% {-webkit-transform: translate(15px,0);}
+  50% {-webkit-transform: translate(6px,0);}
+  75% {-webkit-transform: translate(12px,0);}
+  100% {-webkit-transform: translate(10px,0);}
+}
+
+.csstransforms3d.cssanimations section #bounce-me:hover {
+/* 	-webkit-animation: bounce 450ms ease-out-quad 1; */
+ -webkit-animation-name: bounce;
+ -webkit-animation-duration: 450ms;
+ -webkit-animation-iteration-count: 1;
+/*  -webkit-animation-direction: alternate; */
+ -webkit-animation-timing-function: ease-out-quad;
+ -webkit-animation-fill-mode: forwards;
+/*  -webkit-animation-delay: 2s; */
+}
